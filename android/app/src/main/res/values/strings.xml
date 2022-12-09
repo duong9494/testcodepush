@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">testpushcode</string>
-    <string moduleConfig="true" name="CodePushDeploymentKey">pMqcFuoPUnRTRYWg92me0mZQvjuQXIZ0OlpgY</string>
+    <string moduleConfig="true" name="CodePushDeploymentKey">dW_iSpI0vqGS5Y4VWEYfkNoMknCdNOpRJeoaJ</string>
     <string name="appCenterCrashes_whenToSendCrashes" moduleConfig="true" translatable="false">DO_NOT_ASK_JAVASCRIPT</string>
     <string name="appCenterAnalytics_whenToEnableAnalytics" moduleConfig="true" translatable="false">ALWAYS_SEND</string>
 </resources>
