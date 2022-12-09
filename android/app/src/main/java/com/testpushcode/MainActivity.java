@@ -44,10 +44,5 @@ public class MainActivity extends ReactActivity {
       // More on this on https://reactjs.org/blog/2022/03/29/react-v18.html
       return BuildConfig.IS_NEW_ARCHITECTURE_ENABLED;
     }
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-          AppCenter.start(getApplication(), "f409fdf2-86fe-4d22-8379-726bc6788552",
-                  Analytics.class, Crashes.class);
-    }
+  }
 }
