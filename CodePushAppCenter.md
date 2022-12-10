@@ -6,29 +6,23 @@ Getting Started:
 
 - npm install --save react-native-code-push
 
+### Plugin Installation and Configuration for React Native 0.60 version and above (Android)
 In order to integrate CodePush into your Android project, please perform the following steps:
 
-### Plugin Installation and Configuration for React Native 0.60 version and above (Android)
-
 1. In your `android/settings.gradle` file, make the following additions at the end of the file:
-
     ```gradle
       ...
       include ':app', ':react-native-code-push'
       project(':react-native-code-push').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-code-push/android/app')
     ```
-    
 2. In your `android/app/build.gradle` file, add the `codepush.gradle` file as an additional build task definition underneath `react.gradle`:
-
     ```gradle
     ...
     apply from: "../../node_modules/react-native/react.gradle"
     apply from: "../../node_modules/react-native-code-push/android/codepush.gradle"
     ...
     ```
-
 3. Update the `MainApplication.java` file to use CodePush via the following changes:
-
     ```java
     ...
     // 1. Import the plugin class.
@@ -52,7 +46,6 @@ In order to integrate CodePush into your Android project, please perform the fol
         buildType.resValue 'string', "CODE_PUSH_APK_BUILD_TIME", String.format("\"%d\"", System.currentTimeMillis())
     }
     ```
-
 4. Add the Deployment key to `strings.xml`:
 
    To let the CodePush runtime know which deployment it should query for updates, open your app's `strings.xml` file and add a new string named `CodePushDeploymentKey`, whose value is the key of the deployment you want to configure this app against (like the key for the `Staging` deployment for the `FooBar` app). You can retrieve this value by running `appcenter codepush deployment list -a <ownerName>/<appName> -k` in the CodePush CLI (the `-k` flag is necessary since keys aren't displayed by default) and copying the value of the `Key` column which corresponds to the deployment you want to use (see below). Note that using the deployment's name (like Staging) will not work. The "friendly name" is intended only for authenticated management usage from the CLI, and not for public consumption within your app.
@@ -73,7 +66,6 @@ In order to integrate CodePush into your Android project, please perform the fol
     *Note: If you need to dynamically use a different deployment, you can also override your deployment key in JS code using [Code-Push options](./api-js.md#CodePushOptions)*
 
 Plugin Usage:
-
 ```js
 //import liraries App.js
 import React, { useEffect, useState } from 'react';
@@ -96,7 +88,6 @@ const App = () => {
       codePushDownloadDidProgress
     );
   }, [])
-
 
   function codePushStatusDidChange(syncStatus) {
     switch (syncStatus) {
@@ -182,17 +173,17 @@ export default codePush(codePushOptions)(App);
 ```
 
 ## App Center
-Account Management:
-1. Login
-  ```
-    appcenter login
-  ```
+
 Install the App Center CLI:
 1. Install the App Center CLI:
   ```
     npm install -g appcenter-cli
   ```
-2. Release an app update:
+2.  Login
+  ```
+    appcenter login
+  ```
+3. Release an app update:
   ```
     appcenter codepush release-react -a <ownerName>/MyApp
   ```
