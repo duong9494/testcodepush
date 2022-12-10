@@ -176,14 +176,14 @@ export default codePush(codePushOptions)(App);
 
 Install the App Center CLI:
 1. Install the App Center CLI:
-  ```
-    npm install -g appcenter-cli
+  ```bash
+  npm install -g appcenter-cli
   ```
 2.  Login
-  ```
-    appcenter login
+  ```bash
+  appcenter login
   ```
 3. Release an app update:
-  ```
+  ```bash
     appcenter codepush release-react -a <ownerName>/MyApp
   ```
